@@ -1,0 +1,23 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: czhealth
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/health?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+mybatis-plus: # 作用：可以看到sql语句得执行
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #仅控制台输出的日志
+imgpath:
+  name: D:\img\
+
+  #这是mybatis所使用的配置
+mybatis:
+  type-aliases-package: com.duing.entity
+  mapper-locations: classpath*:mappers/*.xml
+  #使用mybatis有两个重要的配置：1:mapper-locations:告诉mybatisSQL的映射文件在这里
+  #2:type-aliases-package:告诉mybatis对应的实体类位置
+
