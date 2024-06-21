@@ -72,7 +72,10 @@ public class CheckitemServiceImpl implements CheckitemService{
 
     @Override
     public Result edit(CheckItem checkItem) {
-        int update = checkitemMapper.updateById(checkItem)
-        return null;
+        int update = checkitemMapper.updateById(checkItem);
+        if(update<=0){
+            return new Result(false,MessageConstant.EDIT_CHECKGROUP_FAIL);
+        }
+        return new Result(true,MessageConstant.EDIT_CHECKITEM_SUCCESS);
     }
 }
